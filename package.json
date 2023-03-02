@@ -4,7 +4,8 @@
     "description": "```sh\r $ npm install -D tailwindcss\r $ npx tailwindcss init\r ```",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "npx tailwindcss -i ./src/css/main.css -o ./dist/output.css --watch"
     },
     "keywords": [],
     "author": "Adi Nugraha Putra",
