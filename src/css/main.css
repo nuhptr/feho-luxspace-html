@@ -1,3 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .overlay {
+        @apply absolute;
+    }
+
+    .overlay * {
+        @apply transition-all duration-200;
+    }
+
+    .overlay.hoverable > * {
+        @apply opacity-0;
+    }
+
+    /* Find the nearest element */
+    .overlay.hoverable:hover > * {
+        @apply opacity-100;
+    }
+
+    .overlay .video {
+        @apply absolute transform bg-blue-200 bg-no-repeat bg-center rounded-full
+        flex items-center justify-center;
+        background-image: url('/src/design/ic_play.svg');
+        top: 50%;
+        left: 50%;
+    }
+
+    .hero .hero-image,
+    .hero .hero-caption {
+        min-height: 90vh;
+    }
+
+    .hero .hero-cta {
+        @apply w-12 h-12;
+        transform: translateX(-75px) translateY(-50%);
+        background-size: 37.5%;
+    }
+}
+
+@screen md {
+    .hero .hero-image,
+    .hero .hero-caption {
+        min-height: auto;
+    }
+
+    .hero .hero-cta {
+        @apply w-20 h-20 -translate-x-1/2 -translate-y-1/2;
+        transform: translateX(-75%) translateY(-50%);
+        background-size: auto;
+    }
+}
